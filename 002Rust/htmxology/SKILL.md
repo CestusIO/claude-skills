@@ -509,6 +509,8 @@ server.serve_with_router(controller_router).await?;
 
 ## Feature Module Pattern
 
+Each feature is self-contained — Rust code **and** HTML templates live together in the same module directory under `src/`. This keeps features cohesive and easy to move or refactor.
+
 Standard directory layout for each feature:
 
 ```

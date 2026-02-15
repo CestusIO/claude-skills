@@ -10,7 +10,7 @@ Generate professional commit messages following the Conventional Commits specifi
 ## Critical Rules
 
 1. **ONLY analyze git changes** - Never base commit messages on conversation history or AI discussions
-2. **Analyze actual diffs** - Use `git diff --staged` and `git diff` to see real changes
+2. **Analyze actual diffs** - Use `git diff --staged` to see real changes
 3. **Professional tone** - Focus on intent and impact, not implementation minutiae
 4. **Follow Conventional Commits** - Use proper type, scope, and description format
 
@@ -47,12 +47,21 @@ Generate professional commit messages following the Conventional Commits specifi
 
 - Lowercase, no period at end
 - Imperative mood ("add" not "added" or "adds")
-- Max 72 characters for first line
+- Max 50 characters
+- Focus on **why** and **what impact**, not **how**
+
+### Body (optional) only if more context is needed
+
+- Lowercase, no period at end
+- Imperative mood ("add" not "added" or "adds")
+- Max 72 characters
 - Focus on **why** and **what impact**, not **how**
 
 ## Workflow
 
-1. **Analyze staged  changes**
+- Use hypens for bullet points in body if multiple changes are described
+
+1. **Analyze staged changes**
    ```bash
    git diff --staged
    ```
@@ -72,6 +81,7 @@ Generate professional commit messages following the Conventional Commits specifi
    - Use bullet points in body for multiple changes
 
 5. Let user modify and accept the commit message before doing any action
+
 ## Examples
 
 ### Good Commit Messages
@@ -109,7 +119,7 @@ fix: fixed bug
 
 ```
 feat(auth): implemented the authentication middleware using tower and added session management with redis backend and also refactored the user model
-# Too detailed, should be multiple commits
+# Too detailed, should be multiple commits also to long for a single message
 ```
 
 ```
@@ -121,7 +131,6 @@ Updated files
 WIP
 # Not a commit message, use git stash instead
 ```
-
 
 ## Breaking Changes
 
